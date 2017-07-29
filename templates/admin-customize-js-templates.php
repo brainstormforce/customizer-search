@@ -11,10 +11,10 @@
 <script type="text/html" id="tmpl-fl-theme-builder-header-footer-message">
 	<div id="accordion-section-customizer-search" style="display: block;">
 		<h3 class="customizer-search-section accordion-section-title">
-			<span class="search-input">Search</span>
+			<span class="search-input"><?php _e( 'Search', 'customizer-search' ); ?></span>
 			<span class="search-field-wrapper">
-				<input type="text" placeholder="Search..." name="customizer-search-input" autofocus="autofocus" id="customizer-search-input" class="customizer-search-input">
-				<button type="button" class="button clear-search" tabindex="0">Clear</button>
+				<input type="text" placeholder="<?php _e( 'Search...', 'customizer-search' ); ?>" name="customizer-search-input" autofocus="autofocus" id="customizer-search-input" class="customizer-search-input">
+				<button type="button" class="button clear-search" tabindex="0"><?php _e( 'Clear', 'customizer-search' ); ?></button>
 			</span>
 
 		</h3>
