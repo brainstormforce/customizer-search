@@ -123,6 +123,8 @@
 			jQuery( '#customizer-search-input' ).val('');
 			jQuery( 'li.accordion-section' ).removeClass('search-not-found').addClass('search-found');
 			jQuery( 'li.accordion-panel' ).removeClass('search-not-found').addClass('search-found');
+
+			jQuery( searchInputSelector ).focus();
 		}
 	};
 

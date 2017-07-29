@@ -14,3 +14,7 @@
 .customizer-search-section {
 	padding: 10px;
 }
+
+.customize-pane-parent {
+	overflow: inherit;
+}

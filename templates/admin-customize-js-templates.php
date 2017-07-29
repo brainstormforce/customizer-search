@@ -3,7 +3,7 @@
 		<h3 class="customizer-search-section accordion-section-title">
 			<span class="search-input">Search</span>
 			<span class="search-field-wrapper">
-				<input type="text" placeholder="Search.." name="customizer-search-input" id="customizer-search-input" class="customizer-search-input">
+				<input type="text" placeholder="Search.." name="customizer-search-input" autofocus="autofocus" id="customizer-search-input" class="customizer-search-input">
 				<button type="button" class="button clear-search" tabindex="0">Clear</button>
 			</span>
 
