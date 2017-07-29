@@ -1,13 +1,13 @@
 <?php
 /**
  * Plugin Name:     Customizer Search
- * Plugin URI:      PLUGIN SITE HERE
- * Description:     PLUGIN DESCRIPTION HERE
- * Author:          YOUR NAME HERE
- * Author URI:      YOUR SITE HERE
+ * Plugin URI:      https://github.com/Nikschavan/customizer-search
+ * Description:     Search all the options in customizer.
+ * Author:          Brainstorm Force
+ * Author URI:      https://www.brainstormforce.com/
  * Text Domain:     customizer-search
  * Domain Path:     /languages
- * Version:         0.1.0
+ * Version:         1.0.0
  *
  * @package         Customizer_Search
  */
