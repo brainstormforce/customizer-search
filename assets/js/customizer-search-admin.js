@@ -23,21 +23,21 @@
 			var searchArray = this._searchArray(),
 				sections    = _wpCustomizeSettings.sections;
 
-			jQuery(document).on('keyup', searchInputSelector, function(event) {
+			$(document).on('keyup', searchInputSelector, function(event) {
 				event.preventDefault();
-				$this 	= jQuery( searchInputSelector );
+				$this 	= $( searchInputSelector );
 				string 	= $this.val();
 
 				if ( string.length > 2 ) {
 					CustomizerSearchAdmin._searchString( string, searchArray, sections );
 				} else {
-					jQuery( 'li.accordion-section' ).removeClass('search-not-found').addClass('search-found');
-					jQuery( 'li.accordion-panel' ).removeClass('search-not-found').addClass('search-found');
+					$( 'li.accordion-section' ).removeClass('search-not-found').addClass('search-found');
+					$( 'li.accordion-panel' ).removeClass('search-not-found').addClass('search-found');
 				}
 
 			});
 
-			jQuery( document ).on('click', '.clear-search', function(event) {
+			$( document ).on('click', '.clear-search', function(event) {
 				CustomizerSearchAdmin._clearSearch();
 			});
 		},
@@ -104,8 +104,8 @@
 			});
 
 			$.each(resultArray, function(index, val) {
-				$found 		= jQuery('li#accordion-section-' + val['section']);
-				$foundPanel = jQuery('li#accordion-panel-' + sections[val['section']]['panel']);
+				$found 		= $('li#accordion-section-' + val['section']);
+				$foundPanel = $('li#accordion-panel-' + sections[val['section']]['panel']);
 				$found.addClass('search-found');
 				$foundPanel.addClass('search-found');
 				$found.siblings('.control-section').removeClass('search-found').addClass('search-not-found');
@@ -120,11 +120,11 @@
 		 * @access private
 		 */
 		_clearSearch: function() {
-			jQuery( '#customizer-search-input' ).val('');
-			jQuery( 'li.accordion-section' ).removeClass('search-not-found').addClass('search-found');
-			jQuery( 'li.accordion-panel' ).removeClass('search-not-found').addClass('search-found');
+			$( '#customizer-search-input' ).val('');
+			$( 'li.accordion-section' ).removeClass('search-not-found').addClass('search-found');
+			$( 'li.accordion-panel' ).removeClass('search-not-found').addClass('search-found');
 
-			jQuery( searchInputSelector ).focus();
+			$( searchInputSelector ).focus();
 		}
 	};
 
