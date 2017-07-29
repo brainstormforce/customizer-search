@@ -29,8 +29,13 @@
 		}
 
 		.search-not-found {
-			display: none;
+			height: 0;
+			transition: height 0.3s ease-in-out;
 		}
 
+		.search-found {
+			height: 100%;
+			transition: height 0.3s ease-in-out;
+		}
 	</style>
 </script>
