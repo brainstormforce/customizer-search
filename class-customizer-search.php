@@ -1,4 +1,10 @@
 <?php
+/**
+ * Initial Class for Customizer Search
+ *
+ * @since  1.0.0
+ * @package  Customizer_Search
+ */
 
 /**
  * Handles Customizer logic for the theme builder.

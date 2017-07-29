@@ -1,3 +1,13 @@
+<?php
+/**
+ * Underscore js Template for adding customizer setting for customizer search.
+ *
+ * @since  1.0.0
+ * @package  Customizer_Search
+ */
+
+?>
+
 <script type="text/html" id="tmpl-fl-theme-builder-header-footer-message">
 	<div id="accordion-section-customizer-search" style="display: block;">
 		<h3 class="customizer-search-section accordion-section-title">
@@ -19,13 +29,13 @@
 		}
 
 		.search-not-found {
-		    height: 0;
-		    transition: height 0.3s ease-in-out;
+			height: 0;
+			transition: height 0.3s ease-in-out;
 		}
 
 		.search-found {
 			height: 100%;
-		    transition: height 0.3s ease-in-out;
+			transition: height 0.3s ease-in-out;
 		}
 	</style>
 </script>
