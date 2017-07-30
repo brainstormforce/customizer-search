@@ -65,7 +65,10 @@
 		_showHeaderFooterMessage: function()
 		{
 			var template = wp.template( 'fl-theme-builder-header-footer-message' );
-			$( '#accordion-section-themes' ).after( template() );
+
+			if( $( '#accordion-section-customizer-search' ).length == 0 ) {
+				$( '#accordion-section-themes' ).after( template() );
+			}			
 		},
 
 		/**
