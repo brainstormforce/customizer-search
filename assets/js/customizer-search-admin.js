@@ -1,5 +1,16 @@
+/**
+ * Customizer Admin JS
+ *
+ * @since  1.0.0
+ * @package Customizer_Search
+ */
+
 ( function( $ ) {
 
+	/**
+	 * Selector for the search field
+	 * @type {String}
+	 */
 	var searchInputSelector = '#customizer-search-input';
 
 	/**
@@ -99,9 +110,9 @@
 		 * Searches for the string in the given source array.
 		 *
 		 * @since  1.0.0
-		 * @param  String key         Key to be searched.
-		 * @param  Array sourceArray  Array in which the key is to be searched.
-		 * @param  Array sections     Section in the customizer.
+		 * @param  {String} key         Key to be searched.
+		 * @param  {Array} sourceArray  Array in which the key is to be searched.
+		 * @param  {Array} sections     Section in the customizer.
 		 */
 		_searchString: function( key, sourceArray, sections ) {
 			resultArray = []
