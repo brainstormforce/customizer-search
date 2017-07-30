@@ -95,6 +95,14 @@
 			return searchArray;
 		},
 
+		/**
+		 * Searches for the string in the given source array.
+		 *
+		 * @since  1.0.0
+		 * @param  String key         Key to be searched.
+		 * @param  Array sourceArray  Array in which the key is to be searched.
+		 * @param  Array sections     Section in the customizer.
+		 */
 		_searchString: function( key, sourceArray, sections ) {
 			resultArray = []
 
