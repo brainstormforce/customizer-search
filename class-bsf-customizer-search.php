@@ -3,7 +3,7 @@
  * Initial Class for Customizer Search
  *
  * @since  1.0.0
- * @package  Customizer_Search
+ * @package  BSF_Customizer_Search
  */
 
 /**
@@ -11,12 +11,12 @@
  *
  * @since 1.0
  */
-class Customizer_Search {
+class BSF_Customizer_Search {
 
 	/**
-	 * Instance of Customizer_Search
+	 * Instance of BSF_Customizer_Search
 	 *
-	 * @var Customizer_Search
+	 * @var BSF_Customizer_Search
 	 */
 	private static $instance;
 
@@ -26,7 +26,7 @@ class Customizer_Search {
 	public static function instance() {
 
 		if ( ! isset( self::$instance ) ) {
-			self::$instance = new Customizer_Search();
+			self::$instance = new BSF_Customizer_Search();
 
 			self::$instance->hooks();
 		}
@@ -54,8 +54,8 @@ class Customizer_Search {
 	public function enqueue_scripts() {
 		$slug = 'customizer-search-admin';
 
-		wp_enqueue_style( $slug, CS_URL . 'assets/css/' . $slug . '.css', array(), CS_VER );
-		wp_enqueue_script( $slug, CS_URL . 'assets/js/' . $slug . '.js', array(), CS_VER, true );
+		wp_enqueue_style( $slug, BSFCS_URL . 'assets/css/' . $slug . '.css', array(), BSFCS_VER );
+		wp_enqueue_script( $slug, BSFCS_URL . 'assets/js/' . $slug . '.js', array(), BSFCS_VER, true );
 	}
 
 	/**
@@ -65,8 +65,8 @@ class Customizer_Search {
 	 * @return void
 	 */
 	public function footer_scripts() {
-		include CS_DIR . 'templates/admin-customize-js-templates.php';
+		include BSFCS_DIR . 'templates/admin-customize-js-templates.php';
 	}
 }
 
-Customizer_Search::instance();
+BSF_Customizer_Search::instance();
