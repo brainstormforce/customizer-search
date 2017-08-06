@@ -132,6 +132,10 @@
 				$foundPanel.addClass('search-found');
 				$found.siblings('.control-section').removeClass('search-found').addClass('search-not-found');
 				$foundPanel.siblings('.control-section').removeClass('search-found').addClass('search-not-found');
+
+				if ( $( '.generate-upsell-accordion-section' ).length > 0 ) {
+					$( '.generate-upsell-accordion-section' ).removeClass('search-found').addClass('search-not-found');
+				}
 			});
 		},
 
