@@ -8,34 +8,21 @@
 
 ?>
 
-<script type="text/html" id="tmpl-fl-theme-builder-header-footer-message">
-	<div id="accordion-section-customizer-search" style="display: block;">
-		<h3 class="customizer-search-section accordion-section-title">
+<script type="text/html" id="tmpl-search-button">
+
+	<button type="button" class="customize-search-toggle dashicons dashicons-search" aria-expanded="false"><span class="screen-reader-text">Search</span></button>
+
+</script>
+
+<script type="text/html" id="tmpl-search-form">
+	<div id="accordion-section-customizer-search" style="display: none;">
+		<h4 class="customizer-search-section accordion-section-title">
 			<span class="search-input"><?php _e( 'Search', 'customizer-search' ); ?></span>
 			<span class="search-field-wrapper">
 				<input type="text" placeholder="<?php _e( 'Search...', 'customizer-search' ); ?>" name="customizer-search-input" autofocus="autofocus" id="customizer-search-input" class="customizer-search-input">
 				<button type="button" class="button clear-search" tabindex="0"><?php _e( 'Clear', 'customizer-search' ); ?></button>
 			</span>
 
-		</h3>
+		</h4>
 	</div>
-	<style type="text/css">
-		#accordion-section-customizer-search {
-			margin-bottom: 0;
-		}
-
-		#accordion-section-customizer-search .accordion-section-title:after{
-			content: none;
-		}
-
-		.search-not-found {
-			height: 0;
-			transition: height 0.3s ease-in-out;
-		}
-
-		.search-found {
-			height: 100%;
-			transition: height 0.3s ease-in-out;
-		}
-	</style>
 </script>
