@@ -89,19 +89,11 @@
 		 */
 		_searchArray: function()
 		{
-			searchArray = _wpCustomizeSettings.controls;
-			
-			$.each(searchArray, function(index, val) {
-				// We are removing 'nav_menu_item' options from searchArray.
-				if (index.toLowerCase().indexOf("nav_menu_item") >= 0) {
-					delete searchArray[index];
-				}
+			searchArray = [];
 
-				// We are removing 'theme_' options from searchArray.
-				if (index.toLowerCase().indexOf("theme_") >= 0) {
-					delete searchArray[index];
-				}
-			});
+			searchArray.push( _wpCustomizeSettings.controls );
+			searchArray.push( _wpCustomizeSettings.sections );
+			searchArray.push( _wpCustomizeSettings.panels );
 
 			return searchArray;
 		},
@@ -118,20 +110,40 @@
 			resultArray = []
 
 			$.each(sourceArray, function(index, val) {
-				if ( typeof val.label !== "undefined" ) {
-					if (val.label.toLowerCase().indexOf(key) >= 0) {
-						resultArray.push( sourceArray[index] );
+				$.each(val, function(index, val) {
+					if ( typeof val.label !== "undefined" ) {
+						if (val.label.toLowerCase().indexOf(key) >= 0) {
+							resultArray.push( val );
+						}
 					}
-				}
+
+					if ( typeof val.title !== "undefined" ) {
+						if (val.title.toLowerCase().indexOf(key) >= 0) {
+							resultArray.push( val );
+						}
+					}
+				});
 			});
 
 			$.each(resultArray, function(index, val) {
-				$found 		= $('li#accordion-section-' + val['section']);
-				$foundPanel = $('li#accordion-panel-' + sections[val['section']]['panel']);
-				$found.addClass('search-found');
-				$foundPanel.addClass('search-found');
-				$found.siblings('.control-section').removeClass('search-found').addClass('search-not-found');
-				$foundPanel.siblings('.control-section').removeClass('search-found').addClass('search-not-found');
+
+				if ( typeof val['section'] !== "undefined" ) {
+					$found 		= $('li#accordion-section-' + val['section']);
+					$foundPanel = $('li#accordion-panel-' + sections[val['section']]['panel']);
+					$found.addClass('search-found');
+					$foundPanel.addClass('search-found');
+					$found.siblings('.control-section').removeClass('search-found').addClass('search-not-found');
+					$foundPanel.siblings('.control-section').removeClass('search-found').addClass('search-not-found');
+				}
+
+				if ( typeof val['panel'] !== "undefined" ) {
+					$section  = $( 'li#accordion-section-' + val[ 'id' ] );
+					$foundPanel = $('li#accordion-panel-' + val['panel']);
+
+					$section.addClass('search-found search-result').siblings('.control-section').not('.search-result').removeClass('search-found').addClass('search-not-found');
+					$foundPanel.addClass('search-found search-result');
+					$foundPanel.siblings('.control-section').not('.search-result').removeClass('search-found').addClass('search-not-found');
+				}
 
 				if ( $( '.generate-upsell-accordion-section' ).length > 0 ) {
 					$( '.generate-upsell-accordion-section' ).removeClass('search-found').addClass('search-not-found');
@@ -149,6 +161,7 @@
 			$( '#customizer-search-input' ).val('');
 			$( 'li.accordion-section' ).removeClass('search-not-found').addClass('search-found');
 			$( 'li.accordion-panel' ).removeClass('search-not-found').addClass('search-found');
+			$( '.search-result' ).removeClass('search-result');
 
 			$( searchInputSelector ).focus();
 		}
