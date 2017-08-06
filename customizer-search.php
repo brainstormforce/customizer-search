@@ -2,7 +2,7 @@
 /**
  * Plugin Name:     Customizer Search
  * Plugin URI:      https://github.com/Nikschavan/customizer-search
- * Description:     Search all the options in customizer.
+ * Description:     Search for settings in customizer.
  * Author:          Brainstorm Force
  * Author URI:      https://www.brainstormforce.com/
  * Text Domain:     customizer-search

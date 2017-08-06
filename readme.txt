@@ -1,4 +1,4 @@
-=== Customizer Search Settings ===
+=== Customizer Search ===
 Contributors: brainstormforce, Nikschavan
 Donate link: https://www.paypal.me/BrainstormForce
 Tags: customizer, search
@@ -8,11 +8,11 @@ Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Search all the options in customizer.
+Search for settings in customizer.
 
 == Description ==
 
-Search all the options in customizer.
+Search for settings in customizer.
 
 == Installation ==
 
