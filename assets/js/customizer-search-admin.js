@@ -50,6 +50,10 @@
             $(document).on('click', '.clear-search', function (event) {
                 CustomizerSearchAdmin._clearSearch();
             });
+
+            $(document).on('click', '.customize-search-toggle', function (event) {
+                CustomizerSearchAdmin._display_search_form();
+            });
         },
 
         /**
@@ -60,7 +64,7 @@
          * @method _bind
          */
         _bind: function () {
-            wp.customize.previewer.targetWindow.bind($.proxy(this._showHeaderFooterMessage, this));
+            wp.customize.previewer.targetWindow.bind($.proxy(this._showSearchButtonToggle, this));
         },
 
         /**
@@ -69,14 +73,33 @@
          *
          * @since 1.0.0
          * @access private
-         * @method _showHeaderFooterMessage
+         * @method _showSearchButtonToggle
          */
-        _showHeaderFooterMessage: function () {
-            var template = wp.template('fl-theme-builder-header-footer-message');
-
-            if ($('#accordion-section-customizer-search').length == 0) {
-                $('#accordion-section-themes').after(template());
+        _showSearchButtonToggle: function () {
+            var template = wp.template('search-button');
+            if ($('#customize-info .accordion-section-title .customize-search-toggle').length == 0) {
+                $('#customize-info .accordion-section-title').append(template());
             }
+
+            var template = wp.template('search-form');
+            if ($('#customize-info #accordion-section-customizer-search').length == 0) {
+                $('#customize-info .customize-panel-description').after(template());
+            }
+        },
+
+        _display_search_form: function () {
+
+            if ($('#accordion-section-customizer-search').hasClass('open')) {
+                $('#accordion-section-customizer-search').removeClass('open')
+                $('#accordion-section-customizer-search').slideUp('fast');
+            } else {
+                $('.customize-panel-description').removeClass('open');
+                $('.customize-panel-description').slideUp('fast');
+
+                $('#accordion-section-customizer-search').addClass('open');
+                $('#accordion-section-customizer-search').slideDown('fast');
+            }
+
         },
 
         /**
