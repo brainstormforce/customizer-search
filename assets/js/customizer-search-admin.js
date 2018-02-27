@@ -37,9 +37,24 @@
         _init: function () {
             this._bind();
 
-            const controls = $.map(_wpCustomizeSettings.controls, function(value, index) {
-                return [value];
+            const controls = $.map(_wpCustomizeSettings.controls, function(control, index) {
+                $.map(_wpCustomizeSettings.sections, function(section, index) {
+                    if (control.section == section.id) {
+                        $.map(_wpCustomizeSettings.panels, function(panel, index) {
+                            if (section.panel == panel.id) {
+                                control.sectionName = section.title;
+                                control.panel = section.panel;
+                                control.panelName = panel.title;
+                            }
+                        });
+                        
+                     } 
+                });
+
+                return [control];
             });
+
+            console.log(controls);
 
             customizerPanels = document.getElementById('customize-theme-controls');
 
@@ -68,35 +83,48 @@
             });
         },
 
+        expandSection: function(setting) {
+            const sectionName = this.getAttribute('data-section');
+            const section = wp.customize.section( sectionName );
+            section.expand();
+
+            CustomizerSearchAdmin._clearSearch();
+        },
+
         displayMatches: function (stringToMatch, controls) {
             const matchArray = CustomizerSearchAdmin.findMatches(stringToMatch, controls);
 
             if ( 0 === matchArray.length ) return; // Return if empty results.
 
             console.log(matchArray);
-            // const lis = Array.from(document.querySelectorAll('.accordion-section'));
-            // lis.forEach(li => li.classList.add('search-not-found'));
 
             html = matchArray.map(function(index, elem) {
                 return `
-                    <li id="accordion-section-title_tagline" class="accordion-section control-section control-section-default customizer-search-results" aria-owns="sub-accordion-section-title_tagline" style="">
-                        <h3 class="accordion-section-title customize-partial-edit-shortcut-blogname" tabindex="0">
+                    <li id="accordion-section-${index.section}" class="accordion-section control-section control-section-default customizer-search-results" aria-owns="sub-accordion-section-${index.section}" data-section="${index.section}">
+                        <h3 class="accordion-section-title" tabindex="0">
                             ${index.label}
                             <span class="screen-reader-text">Press return or enter to open this section</span>
                         </h3>
+                        <span class="search-setting-path">${index.panelName} <i class="search-setting-path-separator"></i> ${index.sectionName}</i></span>
                     </li>
                 `;
             }).join('');
 
             customizerPanels.classList.add('search-not-found');
             document.getElementById('search-results').innerHTML = `<ul id="customizer-search-results">${html}</ul>`;
+
+            const searchSettings = document.querySelectorAll('#search-results .accordion-section');
+            searchSettings.forEach( setting => setting.addEventListener('click', CustomizerSearchAdmin.expandSection) );
         },
 
         findMatches: function (stringToMatch, controls) {
           return controls.filter(control => {
-            // here we need to figure out if the city or state matches what was searched
+            // here we need to figure out if the city or state matches what was searched.
+            if (control.panelName == null) control.panelName = '';
+            if (control.sectionName == null) control.sectionName = '';
+
             const regex = new RegExp(stringToMatch, 'gi');
-            return control.label.match(regex)
+            return control.label.match(regex) || control.panelName.match(regex) || control.sectionName.match(regex)
           });
         },
 
@@ -153,15 +181,11 @@
          * @access private
          */
         _clearSearch: function () {
-            // $('#customizer-search-input').val('');
-            // const lis = Array.from(document.querySelectorAll('.accordion-section'));
-            // lis.forEach(li => li.classList.remove('search-not-found'));
-            // document.getElementById('customize-theme-controls').innerHTML = customizerPanels;
-            
-
-            customizerPanels.classList.remove('search-not-found');
-            customizerPanels.classList.add('search-found');
+            console.log('clearSearch');
+            const panels = document.getElementById('customize-theme-controls');
+            panels.classList.remove('search-not-found');
             document.getElementById('search-results').innerHTML = '';
+            document.getElementById('customizer-search-input').value = '';
 
             $(searchInputSelector).focus();
         }
