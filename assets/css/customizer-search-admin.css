@@ -66,9 +66,13 @@
 .search-not-found {
     height: 0;
     transition: height 0.3s ease-in-out;
+    visibility: hidden;
+    opacity: 0;
 }
 
 .search-found {
     height: 100%;
     transition: height 0.3s ease-in-out;
+    visibility: visible;
+    opacity: 1;
 }

@@ -11,7 +11,13 @@
      * Selector for the search field
      * @type {String}
      */
-    var searchInputSelector = '#customizer-search-input';
+    const searchInputSelector = '#customizer-search-input';
+
+    /**
+     * innerHTML of all the customizer panels.
+     * @type {String}
+     */
+    let customizerPanels = '';
 
     /**
      * Handles logic for the admin customize interface.
@@ -30,19 +36,25 @@
          */
         _init: function () {
             this._bind();
-            var searchArray = this._searchArray(),
-                sections = _wpCustomizeSettings.sections;
+
+            const controls = $.map(_wpCustomizeSettings.controls, function(value, index) {
+                return [value];
+            });
+
+            customizerPanels = document.getElementById('customize-theme-controls');
+
+            customizePanelsParent = $('#customize-theme-controls');
+            customizePanelsParent.after('<div id="search-results"></div>');
 
             $(document).on('keyup', searchInputSelector, function (event) {
                 event.preventDefault();
                 $this = $(searchInputSelector);
                 string = $this.val();
 
-                if (string.length > 2) {
-                    CustomizerSearchAdmin._searchString(string, searchArray, sections);
+                if (string.length > 0) {
+                    CustomizerSearchAdmin.displayMatches(string, controls);
                 } else {
-                    $('li.accordion-section').removeClass('search-not-found').addClass('search-found');
-                    $('li.accordion-panel').removeClass('search-not-found').addClass('search-found');
+                    CustomizerSearchAdmin._clearSearch();
                 }
 
             });
@@ -54,6 +66,38 @@
             $(document).on('click', '.customize-search-toggle', function (event) {
                 CustomizerSearchAdmin._display_search_form();
             });
+        },
+
+        displayMatches: function (stringToMatch, controls) {
+            const matchArray = CustomizerSearchAdmin.findMatches(stringToMatch, controls);
+
+            if ( 0 === matchArray.length ) return; // Return if empty results.
+
+            console.log(matchArray);
+            // const lis = Array.from(document.querySelectorAll('.accordion-section'));
+            // lis.forEach(li => li.classList.add('search-not-found'));
+
+            html = matchArray.map(function(index, elem) {
+                return `
+                    <li id="accordion-section-title_tagline" class="accordion-section control-section control-section-default customizer-search-results" aria-owns="sub-accordion-section-title_tagline" style="">
+                        <h3 class="accordion-section-title customize-partial-edit-shortcut-blogname" tabindex="0">
+                            ${index.label}
+                            <span class="screen-reader-text">Press return or enter to open this section</span>
+                        </h3>
+                    </li>
+                `;
+            }).join('');
+
+            customizerPanels.classList.add('search-not-found');
+            document.getElementById('search-results').innerHTML = `<ul id="customizer-search-results">${html}</ul>`;
+        },
+
+        findMatches: function (stringToMatch, controls) {
+          return controls.filter(control => {
+            // here we need to figure out if the city or state matches what was searched
+            const regex = new RegExp(stringToMatch, 'gi');
+            return control.label.match(regex)
+          });
         },
 
         /**
@@ -103,84 +147,21 @@
         },
 
         /**
-         * Search for key inside an array.
-         *
-         * @since  1.0.0
-         */
-        _searchArray: function () {
-            searchArray = [];
-
-            searchArray.push(_wpCustomizeSettings.controls);
-            searchArray.push(_wpCustomizeSettings.sections);
-            searchArray.push(_wpCustomizeSettings.panels);
-
-            return searchArray;
-        },
-
-        /**
-         * Searches for the string in the given source array.
-         *
-         * @since  1.0.0
-         * @param  {String} key         Key to be searched.
-         * @param  {Array} sourceArray  Array in which the key is to be searched.
-         * @param  {Array} sections     Section in the customizer.
-         */
-        _searchString: function (key, sourceArray, sections) {
-            resultArray = []
-
-            $.each(sourceArray, function (index, val) {
-                $.each(val, function (index, val) {
-                    if (typeof val.label !== "undefined") {
-                        if (val.label.toLowerCase().indexOf(key) >= 0) {
-                            resultArray.push(val);
-                        }
-                    }
-
-                    if (typeof val.title !== "undefined") {
-                        if (val.title.toLowerCase().indexOf(key) >= 0) {
-                            resultArray.push(val);
-                        }
-                    }
-                });
-            });
-
-            $.each(resultArray, function (index, val) {
-
-                if (typeof val['section'] !== "undefined") {
-                    $found = $('li#accordion-section-' + val['section']);
-                    $foundPanel = $('li#accordion-panel-' + sections[val['section']]['panel']);
-                    $found.addClass('search-found');
-                    $foundPanel.addClass('search-found');
-                    $found.siblings('.control-section').removeClass('search-found').addClass('search-not-found');
-                    $foundPanel.siblings('.control-section').removeClass('search-found').addClass('search-not-found');
-                }
-
-                if (typeof val['panel'] !== "undefined") {
-                    $section = $('li#accordion-section-' + val['id']);
-                    $foundPanel = $('li#accordion-panel-' + val['panel']);
-
-                    $section.addClass('search-found search-result').siblings('.control-section').not('.search-result').removeClass('search-found').addClass('search-not-found');
-                    $foundPanel.addClass('search-found search-result');
-                    $foundPanel.siblings('.control-section').not('.search-result').removeClass('search-found').addClass('search-not-found');
-                }
-
-                if ($('.generate-upsell-accordion-section').length > 0) {
-                    $('.generate-upsell-accordion-section').removeClass('search-found').addClass('search-not-found');
-                }
-            });
-        },
-
-        /**
          * Clear Search input and display all the options
          *
          * @since  1.0.0
          * @access private
          */
         _clearSearch: function () {
-            $('#customizer-search-input').val('');
-            $('li.accordion-section').removeClass('search-not-found').addClass('search-found');
-            $('li.accordion-panel').removeClass('search-not-found').addClass('search-found');
-            $('.search-result').removeClass('search-result');
+            // $('#customizer-search-input').val('');
+            // const lis = Array.from(document.querySelectorAll('.accordion-section'));
+            // lis.forEach(li => li.classList.remove('search-not-found'));
+            // document.getElementById('customize-theme-controls').innerHTML = customizerPanels;
+            
+
+            customizerPanels.classList.remove('search-not-found');
+            customizerPanels.classList.add('search-found');
+            document.getElementById('search-results').innerHTML = '';
 
             $(searchInputSelector).focus();
         }
