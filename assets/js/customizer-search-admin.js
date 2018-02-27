@@ -54,8 +54,6 @@
                 return [control];
             });
 
-            console.log(controls);
-
             customizerPanels = document.getElementById('customize-theme-controls');
 
             customizePanelsParent = $('#customize-theme-controls');
@@ -86,17 +84,14 @@
         expandSection: function(setting) {
             const sectionName = this.getAttribute('data-section');
             const section = wp.customize.section( sectionName );
-            section.expand();
-
             CustomizerSearchAdmin._clearSearch();
+            section.expand();            
         },
 
         displayMatches: function (stringToMatch, controls) {
             const matchArray = CustomizerSearchAdmin.findMatches(stringToMatch, controls);
 
             if ( 0 === matchArray.length ) return; // Return if empty results.
-
-            console.log(matchArray);
 
             html = matchArray.map(function(index, elem) {
                 return `
@@ -181,7 +176,6 @@
          * @access private
          */
         _clearSearch: function () {
-            console.log('clearSearch');
             const panels = document.getElementById('customize-theme-controls');
             panels.classList.remove('search-not-found');
             document.getElementById('search-results').innerHTML = '';
