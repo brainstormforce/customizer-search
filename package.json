@@ -1,12 +1,36 @@
-
 {
   "name": "customizer-search",
   "version": "0.1.0",
   "main": "Gruntfile.js",
   "author": "YOUR NAME HERE",
+  "scripts": {
+    "babel": "babel assets/js/customizer-search-admin.js --watch --out-file assets/js/customizer-search-admin.compiled.js"
+  },
   "devDependencies": {
     "grunt": "~0.4.5",
     "grunt-wp-i18n": "~0.5.0",
     "grunt-wp-readme-to-markdown": "~1.0.0"
+  },
+  "dependencies": {
+    "babel-cli": "^7.0.0-beta.3",
+    "babel-preset-env": "^7.0.0-beta.3"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "browsers": [
+              "last 4 versions",
+              "safari >= 8"
+            ]
+          }
+        }
+      ]
+    ],
+    "plugins": [
+      "transform-object-rest-spread"
+    ]
   }
 }
