@@ -101,11 +101,6 @@
     cursor: pointer;
 }
 
-.search-setting-path-separator:after {
-    content: "\f140";
-}
-
-.search-setting-path-separator:after,
 #search-results .accordion-section:after {
     font: normal 20px/1 dashicons;
     speak: none;
@@ -130,8 +125,4 @@
 
 #search-results .accordion-section h3:hover {
     background: inherit;
-}
-
-.search-setting-path-separator {
-    transform: rotate(270deg);
 }

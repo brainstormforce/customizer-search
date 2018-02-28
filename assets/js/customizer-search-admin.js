@@ -103,7 +103,7 @@
                             ${index.label}
                             <span class="screen-reader-text">Press return or enter to open this section</span>
                         </h3>
-                        <span class="search-setting-path">${index.panelName} <i class="search-setting-path-separator"></i> ${index.sectionName}</i></span>
+                        <span class="search-setting-path">${index.panelName} ▸ ${index.sectionName}</i></span>
                     </li>
                 `;
             }).join('');
