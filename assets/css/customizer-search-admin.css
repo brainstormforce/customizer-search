@@ -98,6 +98,7 @@
 
 .search-setting-path {
     display: flex;
+    cursor: pointer;
 }
 
 .search-setting-path-separator:after {

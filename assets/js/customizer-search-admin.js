@@ -94,6 +94,9 @@
             if ( 0 === matchArray.length ) return; // Return if empty results.
 
             html = matchArray.map(function(index, elem) {
+                
+                if ( '' === index.label ) return; // Return if empty results.
+
                 return `
                     <li id="accordion-section-${index.section}" class="accordion-section control-section control-section-default customizer-search-results" aria-owns="sub-accordion-section-${index.section}" data-section="${index.section}">
                         <h3 class="accordion-section-title" tabindex="0">
