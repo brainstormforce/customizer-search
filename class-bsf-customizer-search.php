@@ -41,8 +41,8 @@ class BSF_Customizer_Search {
 	 * @return void
 	 */
 	private function hooks() {
-		add_action( 'customize_controls_enqueue_scripts',       array( $this, 'enqueue_scripts' ) );
-		add_action( 'customize_controls_print_footer_scripts',  array( $this, 'footer_scripts' ) );
+		add_action( 'customize_controls_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
+		add_action( 'customize_controls_print_footer_scripts', array( $this, 'footer_scripts' ) );
 	}
 
 	/**
