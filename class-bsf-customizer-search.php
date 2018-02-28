@@ -52,10 +52,8 @@ class BSF_Customizer_Search {
 	 * @return void
 	 */
 	public function enqueue_scripts() {
-		$slug = 'customizer-search-admin';
-
-		wp_enqueue_style( $slug, BSFCS_URL . 'assets/css/' . $slug . '.css', array(), BSFCS_VER );
-		wp_enqueue_script( $slug, BSFCS_URL . 'assets/js/' . $slug . '.js', array(), BSFCS_VER, true );
+		wp_enqueue_style( 'customizer-search-admin', BSFCS_URL . 'assets/css/customizer-search-admin.css', array(), BSFCS_VER );
+		wp_enqueue_script( 'customizer-search-admin', BSFCS_URL . 'assets/js/customizer-search-admin.compiled.js', array(), BSFCS_VER, true );
 	}
 
 	/**
