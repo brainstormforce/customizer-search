@@ -38,6 +38,10 @@
         $.map(_wpCustomizeSettings.sections, function (section, index) {
           if (control.section == section.id) {
             $.map(_wpCustomizeSettings.panels, function (panel, index) {
+              if ('' == section.panel) {
+                control.panelName = section.title;
+              }
+
               if (section.panel == panel.id) {
                 control.sectionName = section.title;
                 control.panel = section.panel;
@@ -84,7 +88,13 @@
       html = matchArray.map(function (index, elem) {
         if ('' === index.label) return; // Return if empty results.
 
-        return "\n                    <li id=\"accordion-section-".concat(index.section, "\" class=\"accordion-section control-section control-section-default customizer-search-results\" aria-owns=\"sub-accordion-section-").concat(index.section, "\" data-section=\"").concat(index.section, "\">\n                        <h3 class=\"accordion-section-title\" tabindex=\"0\">\n                            ").concat(index.label, "\n                            <span class=\"screen-reader-text\">Press return or enter to open this section</span>\n                        </h3>\n                        <span class=\"search-setting-path\">").concat(index.panelName, " \u25B8 ").concat(index.sectionName, "</i></span>\n                    </li>\n                ");
+        var settingTrail = index.panelName;
+
+        if ("" != index.sectionName) {
+          settingTrail = "".concat(settingTrail, " \u25B8 ").concat(index.sectionName);
+        }
+
+        return "\n                    <li id=\"accordion-section-".concat(index.section, "\" class=\"accordion-section control-section control-section-default customizer-search-results\" aria-owns=\"sub-accordion-section-").concat(index.section, "\" data-section=\"").concat(index.section, "\">\n                        <h3 class=\"accordion-section-title\" tabindex=\"0\">\n                            ").concat(index.label, "\n                            <span class=\"screen-reader-text\">Press return or enter to open this section</span>\n                        </h3>\n                        <span class=\"search-setting-path\">").concat(settingTrail, "</i></span>\n                    </li>\n                ");
       }).join('');
       customizerPanels.classList.add('search-not-found');
       document.getElementById('search-results').innerHTML = "<ul id=\"customizer-search-results\">".concat(html, "</ul>");

@@ -41,14 +41,17 @@
                 $.map(_wpCustomizeSettings.sections, function(section, index) {
                     if (control.section == section.id) {
                         $.map(_wpCustomizeSettings.panels, function(panel, index) {
+                            if ('' == section.panel) {
+                                control.panelName = section.title;
+                            }
+
                             if (section.panel == panel.id) {
                                 control.sectionName = section.title;
                                 control.panel = section.panel;
                                 control.panelName = panel.title;
                             }
                         });
-                        
-                     } 
+                     }
                 });
 
                 return [control];
@@ -92,10 +95,15 @@
             const matchArray = CustomizerSearchAdmin.findMatches(stringToMatch, controls);
 
             if ( 0 === matchArray.length ) return; // Return if empty results.
-
+            
             html = matchArray.map(function(index, elem) {
                 
                 if ( '' === index.label ) return; // Return if empty results.
+
+                let settingTrail = index.panelName;
+                if ("" != index.sectionName) {
+                    settingTrail = `${settingTrail} ▸ ${index.sectionName}`;
+                }
 
                 return `
                     <li id="accordion-section-${index.section}" class="accordion-section control-section control-section-default customizer-search-results" aria-owns="sub-accordion-section-${index.section}" data-section="${index.section}">
@@ -103,7 +111,7 @@
                             ${index.label}
                             <span class="screen-reader-text">Press return or enter to open this section</span>
                         </h3>
-                        <span class="search-setting-path">${index.panelName} ▸ ${index.sectionName}</i></span>
+                        <span class="search-setting-path">${settingTrail}</i></span>
                     </li>
                 `;
             }).join('');
