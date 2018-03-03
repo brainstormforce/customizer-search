@@ -23,7 +23,8 @@ Search for settings in customizer.
 ## Changelog ##
 
 ### 1.1.0 ###
-- Improved Search results.
+- Rewrite the search logic to improve the search results.
+- The search results are direct links to the customizer panel where the searched setting resides, This improves the required clicks to get to the search setting from old version.
 
 ### 1.0.0 ###
 - Initial Release
