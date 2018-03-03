@@ -126,3 +126,7 @@
 #search-results .accordion-section h3:hover {
     background: inherit;
 }
+
+#customize-controls .hl {
+    background: #ffc600;
+}

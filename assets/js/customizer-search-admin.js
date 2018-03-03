@@ -105,10 +105,15 @@
                     settingTrail = `${settingTrail} ▸ ${index.sectionName}`;
                 }
 
+                const regex = new RegExp(stringToMatch, 'gi');
+
+                const label = index.label.replace(regex, `<span class="hl">${stringToMatch}</span>`);
+                settingTrail = settingTrail.replace(regex, `<span class="hl">${stringToMatch}</span>`);
+
                 return `
                     <li id="accordion-section-${index.section}" class="accordion-section control-section control-section-default customizer-search-results" aria-owns="sub-accordion-section-${index.section}" data-section="${index.section}">
                         <h3 class="accordion-section-title" tabindex="0">
-                            ${index.label}
+                            ${label}
                             <span class="screen-reader-text">Press return or enter to open this section</span>
                         </h3>
                         <span class="search-setting-path">${settingTrail}</i></span>
