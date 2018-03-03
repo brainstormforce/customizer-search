@@ -16,7 +16,7 @@ Using a theme powered by the WordPress Customizer? Then you will love this plugi
 
 Works with all WordPress theme. Tested with:
 
-1. <a href="https://wpastra.com/pro/?utm_source=customizer&utm_medium=upgrade-link&utm_campaign=upgrade-to-pro&bsf=162">Astra</a>
+1. <a href="https://wpastra.com/pro/?utm_source=customizer-search-plugin&utm_medium=plugin-readme&utm_campaign=tested-with-astra&bsf=162">Astra</a>
 2. GeneratePress
 3. OceanWP
 4. Hestia
