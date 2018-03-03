@@ -3,7 +3,7 @@
  * Initial Class for Customizer Search
  *
  * @since  1.0.0
- * @package  BSF_Customizer_Search
+ * @package  Customizer_Search
  */
 
 /**
@@ -11,12 +11,12 @@
  *
  * @since 1.0
  */
-class BSF_Customizer_Search {
+class Customizer_Search {
 
 	/**
-	 * Instance of BSF_Customizer_Search
+	 * Instance of Customizer_Search
 	 *
-	 * @var BSF_Customizer_Search
+	 * @var Customizer_Search
 	 */
 	private static $instance;
 
@@ -26,7 +26,7 @@ class BSF_Customizer_Search {
 	public static function instance() {
 
 		if ( ! isset( self::$instance ) ) {
-			self::$instance = new BSF_Customizer_Search();
+			self::$instance = new Customizer_Search();
 
 			self::$instance->hooks();
 		}
@@ -67,4 +67,4 @@ class BSF_Customizer_Search {
 	}
 }
 
-BSF_Customizer_Search::instance();
+Customizer_Search::instance();

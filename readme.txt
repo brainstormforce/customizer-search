@@ -3,8 +3,8 @@ Contributors: brainstormforce, Nikschavan
 Donate link: https://www.paypal.me/BrainstormForce
 Tags: customizer, search
 Requires at least: 4.4
-Tested up to: 4.8.1
-Stable tag: 1.0.0
+Tested up to: 4.9.4
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,5 +22,8 @@ Search for settings in customizer.
 
 == Changelog ==
 
+= 1.1.0 =
+- Improved Search results.
+
 = 1.0.0 =
-* Initial Release
+- Initial Release
