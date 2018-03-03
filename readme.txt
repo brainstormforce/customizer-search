@@ -14,8 +14,6 @@ Search for settings in customizer.
 
 Search for settings in customizer.
 
-<video src="https://dha4w82d62smt.cloudfront.net/items/332X2M191M01400w372R/Screen%20Recording%202018-03-03%20at%2004.35%20PM.mov" controls style="display: block;height: auto;width: 100%;">Search Customizer Settings Quickly</video>
-
 == Installation ==
 
 1. Upload the plugin files to the `/wp-content/plugins/customizer-search` directory, or install the plugin through the WordPress plugins screen directly.
