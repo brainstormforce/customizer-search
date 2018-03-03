@@ -16,11 +16,11 @@ Using a theme powered by the WordPress Customizer? Then you will love this plugi
 
 Works with all WordPress theme. Tested with:
 
-<a href="https://wpastra.com/pro/?utm_source=customizer&utm_medium=upgrade-link&utm_campaign=upgrade-to-pro&bsf=162">Astra</a>
-GeneratePress
-OceanWP
-Hestia
-Sydney
+1. <a href="https://wpastra.com/pro/?utm_source=customizer&utm_medium=upgrade-link&utm_campaign=upgrade-to-pro&bsf=162">Astra</a>
+2. GeneratePress
+3. OceanWP
+4. Hestia
+5. Sydney
 
 https://www.youtube.com/watch?v=81LSHXHw058
 
