@@ -130,10 +130,11 @@
 
         findMatches: function (stringToMatch, controls) {
           return controls.filter(control => {
-            // here we need to figure out if the city or state matches what was searched.
+            
             if (control.panelName == null) control.panelName = '';
             if (control.sectionName == null) control.sectionName = '';
 
+            // Search for the stringToMatch from control label, Panel Name, Section Name.
             const regex = new RegExp(stringToMatch, 'gi');
             return control.label.match(regex) || control.panelName.match(regex) || control.sectionName.match(regex)
           });
