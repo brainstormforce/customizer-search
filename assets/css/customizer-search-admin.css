@@ -66,9 +66,63 @@
 .search-not-found {
     height: 0;
     transition: height 0.3s ease-in-out;
+    visibility: hidden;
+    opacity: 0;
+    display: none;
 }
 
 .search-found {
     height: 100%;
     transition: height 0.3s ease-in-out;
+    visibility: visible;
+    opacity: 1;
+}
+
+#search-results .accordion-section {
+    border-left: none;
+    border-right: none;
+    padding: 10px 10px 11px 14px;
+    line-height: 21px;
+    background: #fff;
+    position: relative;
+}
+
+#search-results .accordion-section h3 {
+    padding: 0;
+    margin: 0
+}
+
+#search-results .accordion-section:hover {
+    background: #f3f3f5;
+}
+
+.search-setting-path {
+    display: flex;
+    cursor: pointer;
+}
+
+#search-results .accordion-section:after {
+    font: normal 20px/1 dashicons;
+    speak: none;
+    display: block;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-decoration: none !important;
+}
+
+#search-results .accordion-section:after {
+    content: "\f345";
+    position: absolute;
+    top: 12px;
+    right: 10px;
+    z-index: 1;
+    top: calc(50% - 10px);
+}
+
+#search-results .accordion-section h3:after {
+    content: none;
+}
+
+#search-results .accordion-section h3:hover {
+    background: inherit;
 }

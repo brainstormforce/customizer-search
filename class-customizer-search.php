@@ -3,7 +3,7 @@
  * Initial Class for Customizer Search
  *
  * @since  1.0.0
- * @package  BSF_Customizer_Search
+ * @package  Customizer_Search
  */
 
 /**
@@ -11,12 +11,12 @@
  *
  * @since 1.0
  */
-class BSF_Customizer_Search {
+class Customizer_Search {
 
 	/**
-	 * Instance of BSF_Customizer_Search
+	 * Instance of Customizer_Search
 	 *
-	 * @var BSF_Customizer_Search
+	 * @var Customizer_Search
 	 */
 	private static $instance;
 
@@ -26,7 +26,7 @@ class BSF_Customizer_Search {
 	public static function instance() {
 
 		if ( ! isset( self::$instance ) ) {
-			self::$instance = new BSF_Customizer_Search();
+			self::$instance = new Customizer_Search();
 
 			self::$instance->hooks();
 		}
@@ -41,8 +41,8 @@ class BSF_Customizer_Search {
 	 * @return void
 	 */
 	private function hooks() {
-		add_action( 'customize_controls_enqueue_scripts',       array( $this, 'enqueue_scripts' ) );
-		add_action( 'customize_controls_print_footer_scripts',  array( $this, 'footer_scripts' ) );
+		add_action( 'customize_controls_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
+		add_action( 'customize_controls_print_footer_scripts', array( $this, 'footer_scripts' ) );
 	}
 
 	/**
@@ -52,10 +52,8 @@ class BSF_Customizer_Search {
 	 * @return void
 	 */
 	public function enqueue_scripts() {
-		$slug = 'customizer-search-admin';
-
-		wp_enqueue_style( $slug, BSFCS_URL . 'assets/css/' . $slug . '.css', array(), BSFCS_VER );
-		wp_enqueue_script( $slug, BSFCS_URL . 'assets/js/' . $slug . '.js', array(), BSFCS_VER, true );
+		wp_enqueue_style( 'customizer-search-admin', BSFCS_URL . 'assets/css/customizer-search-admin.css', array(), BSFCS_VER );
+		wp_enqueue_script( 'customizer-search-admin', BSFCS_URL . 'assets/js/customizer-search-admin.compiled.js', array(), BSFCS_VER, true );
 	}
 
 	/**
@@ -69,4 +67,4 @@ class BSF_Customizer_Search {
 	}
 }
 
-BSF_Customizer_Search::instance();
+Customizer_Search::instance();
