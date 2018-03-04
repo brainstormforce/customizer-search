@@ -4,7 +4,7 @@ Donate link: https://www.paypal.me/BrainstormForce
 Tags: customizer, search
 Requires at least: 4.4
 Tested up to: 4.9.4
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,6 +25,10 @@ https://www.youtube.com/watch?v=81LSHXHw058
 1. Search field will appear when in the customizer.
 
 == Changelog ==
+
+= 1.1.1 =
+- Highlight the characters that are matched in the results.
+- Auto focus the search input when the search icon is clicked.
 
 = 1.1.0 =
 - Rewrite the search logic to improve the search results.
