@@ -105,10 +105,15 @@
                     settingTrail = `${settingTrail} ▸ ${index.sectionName}`;
                 }
 
+                const regex = new RegExp(stringToMatch, 'gi');
+
+                const label = index.label.replace(regex, `<span class="hl">${stringToMatch}</span>`);
+                settingTrail = settingTrail.replace(regex, `<span class="hl">${stringToMatch}</span>`);
+
                 return `
                     <li id="accordion-section-${index.section}" class="accordion-section control-section control-section-default customizer-search-results" aria-owns="sub-accordion-section-${index.section}" data-section="${index.section}">
                         <h3 class="accordion-section-title" tabindex="0">
-                            ${index.label}
+                            ${label}
                             <span class="screen-reader-text">Press return or enter to open this section</span>
                         </h3>
                         <span class="search-setting-path">${settingTrail}</i></span>
@@ -125,10 +130,11 @@
 
         findMatches: function (stringToMatch, controls) {
           return controls.filter(control => {
-            // here we need to figure out if the city or state matches what was searched.
+            
             if (control.panelName == null) control.panelName = '';
             if (control.sectionName == null) control.sectionName = '';
 
+            // Search for the stringToMatch from control label, Panel Name, Section Name.
             const regex = new RegExp(stringToMatch, 'gi');
             return control.label.match(regex) || control.panelName.match(regex) || control.sectionName.match(regex)
           });
@@ -177,6 +183,8 @@
                 $('#accordion-section-customizer-search').addClass('open');
                 $('#accordion-section-customizer-search').slideDown('fast');
             }
+
+            $(searchInputSelector).focus();
 
         },
 

@@ -53,7 +53,7 @@ class Customizer_Search {
 	 */
 	public function enqueue_scripts() {
 		wp_enqueue_style( 'customizer-search-admin', BSFCS_URL . 'assets/css/customizer-search-admin.css', array(), BSFCS_VER );
-		wp_enqueue_script( 'customizer-search-admin', BSFCS_URL . 'assets/js/customizer-search-admin.compiled.js', array(), BSFCS_VER, true );
+		wp_enqueue_script( 'customizer-search-admin', BSFCS_URL . 'assets/js/customizer-search-admin.compiled.js', array(), filemtime( BSFCS_DIR . 'assets/js/customizer-search-admin.compiled.js' ), true );
 	}
 
 	/**
