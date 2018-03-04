@@ -184,6 +184,8 @@
                 $('#accordion-section-customizer-search').slideDown('fast');
             }
 
+            $(searchInputSelector).focus();
+
         },
 
         /**
