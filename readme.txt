@@ -12,7 +12,11 @@ Search for settings in customizer.
 
 == Description ==
 
-Search for settings in customizer.
+Using a theme powered by the WordPress Customizer? Then you will love this plugin. Save the time and frustration finding options. Simply search for the setting you're looking for and get there instantly.
+
+Works with all WordPress theme.
+
+https://www.youtube.com/watch?v=81LSHXHw058
 
 == Installation ==
 
