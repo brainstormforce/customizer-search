@@ -16,7 +16,7 @@ Using a theme powered by the WordPress Customizer? Then you will love this plugi
 
 Works with all WordPress themes.
 
-https://www.youtube.com/watch?v=81LSHXHw058
+https://www.youtube.com/watch?v=IBFfap_vGzg
 
 ## Installation ##
 
