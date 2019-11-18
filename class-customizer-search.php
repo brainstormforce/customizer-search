@@ -52,7 +52,7 @@ class Customizer_Search {
 	 * @return void
 	 */
 	public function load_textdomain() {
-		load_plugin_textdomain( 'customizer-search', FALSE, basename( dirname( __FILE__ ) ) . '/languages/' );
+		load_plugin_textdomain( 'customizer-search', false, basename( dirname( __FILE__ ) ) . '/languages/' );
 	}
 
 	/**
