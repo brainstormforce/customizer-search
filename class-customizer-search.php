@@ -43,6 +43,16 @@ class Customizer_Search {
 	private function hooks() {
 		add_action( 'customize_controls_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 		add_action( 'customize_controls_print_footer_scripts', array( $this, 'footer_scripts' ) );
+		add_action( 'plugins_loaded', array( $this, 'load_textdomain' ) );
+	}
+
+	/**
+	 * Load the plugin textdomain.
+	 *
+	 * @return void
+	 */
+	public function load_textdomain() {
+		load_plugin_textdomain( 'customizer-search', false, basename( dirname( __FILE__ ) ) . '/languages/' );
 	}
 
 	/**

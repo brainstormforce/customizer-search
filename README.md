@@ -1,10 +1,10 @@
 # Customizer Search #
-**Contributors:** brainstormforce, Nikschavan  
+**Contributors:** [brainstormforce](https://profiles.wordpress.org/brainstormforce), [Nikschavan](https://profiles.wordpress.org/Nikschavan)  
 **Donate link:** https://www.paypal.me/BrainstormForce  
 **Tags:** customizer, search  
-**Requires at least:** 4.4  
-**Tested up to:** 4.9.4  
-**Stable tag:** 1.1.2  
+**Requires at least:** 4.6  
+**Tested up to:** 5.3  
+**Stable tag:** 1.1.3  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -25,6 +25,9 @@ https://www.youtube.com/watch?v=IBFfap_vGzg
 1. Search field will appear when in the customizer.
 
 ## Changelog ##
+
+### 1.1.3 ###
+- Setup plugin translations through https://translate.wordpress.org/projects/wp-plugins/customizer-search/.
 
 ### 1.1.2 ###
 - Change the background color highlight in the searched results.
