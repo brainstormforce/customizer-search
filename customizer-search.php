@@ -21,3 +21,11 @@ define( 'BSFCS_PATH', plugin_basename( __FILE__ ) );
  * Load the plugin.
  */
 require_once 'class-customizer-search.php';
+
+if ( is_admin() ) {
+    // Admin Notice Library Settings.
+    require_once 'lib/notices/class-astra-notices.php';
+}
+
+// BSF Analytics library.
+require_once 'admin/bsf-analytics/class-bsf-analytics.php';

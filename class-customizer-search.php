@@ -44,13 +44,6 @@ class Customizer_Search {
 		add_action( 'customize_controls_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 		add_action( 'customize_controls_print_footer_scripts', array( $this, 'footer_scripts' ) );
 		add_action( 'plugins_loaded', array( $this, 'load_textdomain' ) );
-		if ( is_admin() ) {
-			// Admin Notice Library Settings.
-			require_once 'lib/notices/class-astra-notices.php';
-		}
-		
-		// BSF Analytics library.
-		require_once 'admin/bsf-analytics/class-bsf-analytics.php';
 	}
 
 	/**
