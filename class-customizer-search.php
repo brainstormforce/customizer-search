@@ -47,7 +47,7 @@ class Customizer_Search {
 	}
 
 	/**
-	 * Load the plugin textdomain.
+	 * Load the plugin textdomain. Test Commit.
 	 *
 	 * @return void
 	 */
