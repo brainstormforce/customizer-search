@@ -3,8 +3,8 @@ Contributors: brainstormforce, Nikschavan
 Donate link: https://www.paypal.me/BrainstormForce
 Tags: customizer, search
 Requires at least: 4.6
-Tested up to: 5.4
-Stable tag: 1.1.3
+Tested up to: 5.4.2
+Stable tag: 1.1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,6 +25,9 @@ https://www.youtube.com/watch?v=IBFfap_vGzg
 1. Search field will appear when in the customizer.
 
 == Changelog ==
+
+= 1.1.4 =
+- New: Users can now share non-personal usage data to help us test and develop better products. ( https://store.brainstormforce.com/usage-tracking/?utm_source=wp_dashboard&utm_medium=general_settings&utm_campaign=usage_tracking )
 
 = 1.1.3 =
 - Setup plugin translations through https://translate.wordpress.org/projects/wp-plugins/customizer-search/.
