@@ -27,7 +27,7 @@ https://www.youtube.com/watch?v=IBFfap_vGzg
 == Changelog ==
 
 = 1.1.5 =
-- Improvement: Non-personal usage multiple admin notice compatibility.
+- Fix: Fixed compatibility with other plugins with respect to the admin notice.
 
 = 1.1.4 =
 - New: Users can now share non-personal usage data to help us test and develop better products. ( https://store.brainstormforce.com/usage-tracking/?utm_source=wp_dashboard&utm_medium=general_settings&utm_campaign=usage_tracking )
