@@ -28,8 +28,6 @@ if ( is_admin() ) {
 }
 
 // BSF Analytics library.
-require_once 'admin/bsf-analytics/class-bsf-analytics.php';
-
 if ( ! class_exists( 'BSF_Analytics_Loader' ) ) {
 	require_once BSFCS_DIR . 'admin/bsf-analytics/class-bsf-analytics-loader.php';
 }
