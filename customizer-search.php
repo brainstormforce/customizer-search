@@ -7,12 +7,12 @@
  * Author URI:      https://www.brainstormforce.com/
  * Text Domain:     customizer-search
  * Domain Path:     /languages
- * Version:         1.1.4
+ * Version:         1.1.5
  *
  * @package         Customizer_Search
  */
 
-define( 'BSFCS_VER', '1.1.4' );
+define( 'BSFCS_VER', '1.1.5' );
 define( 'BSFCS_DIR', plugin_dir_path( __FILE__ ) );
 define( 'BSFCS_URL', plugins_url( '/', __FILE__ ) );
 define( 'BSFCS_PATH', plugin_basename( __FILE__ ) );
