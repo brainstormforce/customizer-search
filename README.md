@@ -26,9 +26,6 @@ https://www.youtube.com/watch?v=IBFfap_vGzg
 
 ## Changelog ##
 
-### 1.1.7 ###
-- Improvement: Compatibility with WordPress 6.5.
-
 ### 1.1.6 ###
 - Fix: Admin notice CSS console error in admin area.
 
