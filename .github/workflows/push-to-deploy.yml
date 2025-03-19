@@ -8,9 +8,24 @@ jobs:
     name: New tag
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    - name: WordPress Plugin Deploy
-      uses: 10up/action-wordpress-plugin-asset-update@stable
+    - uses: actions/checkout@v2
+
+    # Setup Node.js
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18
+
+    # Install dependencies and run build
+    - name: Install Dependencies
+      run: npm install
+
+    - name: Build Plugin Assets
+      run: npm run build
+
+    # Deploy plugin and assets
+    - name: Deploy Plugin Code and Assets
+      uses: 10up/action-wordpress-plugin-deploy@stable
       env:
         SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
         SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
