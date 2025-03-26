@@ -4,7 +4,7 @@
 **Tags:** customizer, search
 **Requires at least:** 4.6
 **Tested up to:** 6.7
-**Stable tag:** 1.1.8
+**Stable tag:** 1.2.0
 **License:** GPLv2 or later
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,8 +26,8 @@ https://www.youtube.com/watch?v=IBFfap_vGzg
 
 ## Changelog ##
 
-### 1.1.8 ###
-- Fix: Fixed security issue which originated from Astra-Sites library.
+### 1.2.0 ###
+- Fix: Fixed security issue which originated from Astra-Notices library.
 
 ### 1.1.6 ###
 - Fix: Admin notice CSS console error in admin area.
