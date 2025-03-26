@@ -27,7 +27,7 @@ https://www.youtube.com/watch?v=IBFfap_vGzg
 ## Changelog ##
 
 ### 1.2.0 ###
-- Fix: Fixed security issue which originated from Astra-Sites library.
+- Fix: Fixed security issue which originated from Astra-Notices library.
 
 ### 1.1.6 ###
 - Fix: Admin notice CSS console error in admin area.
