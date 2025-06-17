@@ -1,5 +1,5 @@
 === Customizer Search ===
-Contributors: brainstormforce, Nikschavan
+Contributors: brainstormforce
 Donate link: https://www.paypal.me/BrainstormForce
 Tags: customizer, search
 Requires at least: 4.6

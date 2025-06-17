@@ -1,5 +1,5 @@
 # Customizer Search #
-**Contributors:** [brainstormforce](https://profiles.wordpress.org/brainstormforce), [Nikschavan](https://profiles.wordpress.org/Nikschavan)
+**Contributors:** [brainstormforce](https://profiles.wordpress.org/brainstormforce)
 **Donate link:** https://www.paypal.me/BrainstormForce
 **Tags:** customizer, search
 **Requires at least:** 4.6

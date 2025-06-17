@@ -87,7 +87,7 @@ msgid "Customizer Search"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
-msgid "https://github.com/Nikschavan/customizer-search"
+msgid "https://github.com/brainstormforce/customizer-search"
 msgstr ""
 
 #. Description of the plugin/theme

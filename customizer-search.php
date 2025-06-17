@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:     Customizer Search
- * Plugin URI:      https://github.com/Nikschavan/customizer-search
+ * Plugin URI:      https://github.com/brainstormforce/customizer-search
  * Description:     Search for settings in customizer.
  * Author:          Brainstorm Force
  * Author URI:      https://www.brainstormforce.com/

@@ -1,5 +1,5 @@
 {
-  "name": "nikschavan/customizer-search",
+  "name": "brainstormforce/customizer-search",
   "description": "Search for an option in the customizer.",
   "require-dev": {
     "dealerdirect/phpcodesniffer-composer-installer": "^0.4.4",
