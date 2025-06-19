@@ -1,4 +1,4 @@
-# Copyright (C) 2020 Brainstorm Force
+# Copyright (C) 2020 Nikhil Chavan
 # This file is distributed under the same license as the Customizer Search package.
 msgid ""
 msgstr ""
@@ -95,9 +95,9 @@ msgid "Search for settings in customizer."
 msgstr ""
 
 #. Author of the plugin/theme
-msgid "Brainstorm Force"
+msgid "Nikhil Chavan"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "https://www.brainstormforce.com/"
+msgid "https://www.nikhilchavan.com/"
 msgstr ""
