@@ -1,10 +1,9 @@
 === Customizer Search ===
-Contributors: brainstormforce, Nikschavan
-Donate link: https://www.paypal.me/BrainstormForce
+Contributors: Nikschavan
 Tags: customizer, search
 Requires at least: 4.6
 Tested up to: 6.8
-Stable tag: 1.2.0
+Stable tag: 1.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,6 +24,9 @@ https://www.youtube.com/watch?v=IBFfap_vGzg
 1. Search field will appear when in the customizer.
 
 == Changelog ==
+
+= 1.2.1 =
+- Improvement: Updated Readme file.
 
 = 1.2.0 =
 - Fix: Fixed security issue which originated from Astra-Notices library.
